@@ -1,0 +1,30 @@
+version: '3'
+services:
+  datapower:
+    container_name: datapower
+    image: "autopower/datapower:latest"
+    build: .
+    ports:
+     - "9090-9100:9090-9100"
+     - "5550:5550"
+    depends_on:
+      - mssql
+  mssql:
+    container_name: mssql
+    image: "microsoft/mssql-server-linux:latest"
+    environment:
+      SA_PASSWORD: "abcd.1234"
+      ACCEPT_EULA: "Y"
+    ports:
+    - "1433:1433"
+  jenkins:
+    container_name: jenkins
+    image: "jenkins/jenkins"
+    ports:
+      - '80:8080'
+      - '443:8443'
+    volumes:
+      - 'jenkins_data:/bitnami'
+volumes:
+  jenkins_data:
+    driver: local

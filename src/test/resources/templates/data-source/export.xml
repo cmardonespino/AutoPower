@@ -1,0 +1,58 @@
+<datapower-configuration version="3">
+    <export-details>
+        <description>Exported Configuration</description>
+        <user>admin</user>
+        <domain>default</domain>
+        <comment/>
+        <product-id>software</product-id>
+        <product>IDG</product>
+        <display-product>IDG</display-product>
+        <model>IBM DataPower Gateway</model>
+        <display-model>IBM DataPower Gateway</display-model>
+        <device-name>d39078b7f885</device-name>
+        <serial-number>0000001</serial-number>
+        <firmware-version>IDG.7.6.0.4</firmware-version>
+        <display-firmware-version>IDG.7.6.0.4</display-firmware-version>
+        <firmware-build>294196</firmware-build>
+        <firmware-timestamp>2017/12/02 10:42:23</firmware-timestamp>
+        <current-date>2018-02-13</current-date>
+        <current-time>09:40:47 EST</current-time>
+        <reset-date>2018-02-13</reset-date>
+        <reset-time>09:35:20 EST</reset-time>
+        <login-message/>
+        <custom-ui-file/>
+    </export-details>
+    <interface-data>
+        <interface ip-addr="172.23.0.3" name="eth0" type="Ethernet" vers="ipv4"/>
+    </interface-data>
+    <configuration domain="default">
+        <DomainSettings intrinsic="true" name="default" xmlns:dp="http://www.datapower.com/schemas/management" xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+            <mAdminState>enabled</mAdminState>
+            <PasswordTreatment>masked</PasswordTreatment>
+        </DomainSettings>
+        <PasswordAlias name="PMAlias" xmlns:dp="http://www.datapower.com/schemas/management" xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+            <mAdminState>enabled</mAdminState>
+            <EncryptedPassword>U/cTMicLu8mdfSsTTgdyaQFLIp0ofZVo</EncryptedPassword>
+            <DomainSettings class="DomainSettings">default</DomainSettings>
+        </PasswordAlias>
+        <SQLDataSource name="SQLDataSource" xmlns:dp="http://www.datapower.com/schemas/management" xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+            <mAdminState>enabled</mAdminState>
+            <Database>MSSQLServer</Database>
+            <Username>sa</Username>
+            <Password/>
+            <PasswordAlias class="PasswordAlias">PMAlias</PasswordAlias>
+            <DataSourceID>TestDataPowerDB</DataSourceID>
+            <DataSourceHost>mssql</DataSourceHost>
+            <DataSourceHostResolved>mssql</DataSourceHostResolved>
+            <DataSourcePort>1433</DataSourcePort>
+            <LimitReturnedData>off</LimitReturnedData>
+            <LimitReturnedDataSize>128</LimitReturnedDataSize>
+            <MaxConnection>10</MaxConnection>
+            <OracleDataSourceType>SID</OracleDataSourceType>
+            <ConnectTimeout>15</ConnectTimeout>
+            <QueryTimeout>0</QueryTimeout>
+            <IdleTimeout>180</IdleTimeout>
+            <LoadBalancing>off</LoadBalancing>
+        </SQLDataSource>
+    </configuration>
+</datapower-configuration>
