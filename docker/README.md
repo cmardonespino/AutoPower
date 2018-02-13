@@ -1,6 +1,6 @@
 # Datapower and SQL Server running in Docker containers
 
-## Why i need to do this?
+## Why I need to do this?
 * When you start up the original image of datapower with SQL Server container, doesn't work because of defaults; datapower runs the container with non-root user, so in consecuense, SQL Server container and Datapower can't see each other containers.
 * When you start up the containers, the web-mgmt is disabled. In consecuense, you can't open the website of Datapower to start using it.
 
@@ -14,7 +14,7 @@ This project contain the following:
 * <b>Dockerfile</b> with the features necessaries according the specific objetives. This will download (if you don't have) [SQL Server](https://hub.docker.com/r/microsoft/mssql-server-linux/) and [Data Power](https://hub.docker.com/r/ibmcom/datapower/).
 * <b>Docker-compose.yml</b> file to configure the connection among two containers. You can feel free to make changes. It depend of your needs.
 
-## How i do this?
+## How I do this?
 * Create a new image of datapower with <b>Dockerfile</b> to:
 	* Run as root
 	* Enable web-mgmt
@@ -26,7 +26,5 @@ Connect two containers starting from images downloaded from [Docker Hub](https:/
 
 
 ### Detailed Steps
-* First you need to clone this repository in a directory.
-* Enter in the path of the directory clonated from your prompt where are the files and folders specificated in 'Features' and write <b>docker build . -t autopower/datapower</b>. With this, you build a new image of ibm-datapower named 'autopower/datapower' with the features specificated in the first point of 'Specific Objetives'.
-* Once created our own image of datapower with <b>Dockerfile</b>, write <b>docker-compose up</b>. With this, you lift up the two containers.
-* Finally, enter in your localhost URL: https://localhost:9090/ and feeling free to make configurations in webGUI datapower
+* Enter in the path 'docker' of the directory clonated and write <b>docker build . -t autopower/datapower</b>. With this, you will build a new image of ibm-datapower named 'autopower/datapower' with the issures solved mentioned in 'Why I need to do this?'.
+* Once created our own image of datapower with <b>Dockerfile</b>, you can continue the following [steps](../README.md)
